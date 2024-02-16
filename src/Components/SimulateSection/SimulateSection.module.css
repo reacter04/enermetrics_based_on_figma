@@ -1,0 +1,148 @@
+.simulate_section_list {
+  position: relative;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  gap: 3px;
+  padding: 0;
+  margin-bottom: 80px;
+}
+
+.simulate_option {
+  position: relative;
+  flex: 1;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+  gap: 15px;
+  border-radius: 10px;
+  background: #f7f7f7;
+  color: #6b6b6b;
+  font-size: 18px;
+  box-shadow: 1px 1px 8px 1px #6565655d;
+  user-select: none;
+  cursor: pointer;
+}
+
+.simulate_section_list li img,
+.simulate_button img {
+  height: 85%;
+  width: auto;
+}
+
+.simulate_button {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--primary-green-color);
+  height: 45px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 25px;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  box-shadow: 1px 1px 8px 1px #6565655d;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.simulate_button:hover {
+  background: #00865b;
+
+  box-shadow: 1px 1px 4px 2px #6b6b6b5d;
+}
+
+.simulate_button:active {
+  background-color: #006a48;
+}
+
+/*clasele pentru popupri*/
+
+.popup {
+  z-index: 1000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-60px);
+  transition: all 0.8s ease;
+}
+.popup.openedPopup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: all 0.8s ease;
+  cursor: auto;
+}
+
+@media (max-width: 1280px) {
+  .simulate_section_list{
+    margin-top: 60px;
+  }
+  .simulate_section_list li {
+    height: 35px;
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .simulate_section_list li img {
+    height: 70%;
+  }
+  .simulate_button {
+    font-size: 16px;
+    gap: 5px;
+    padding: 5px 12px;
+  }
+
+  .simulate_button img {
+    height: 80%;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .simulate_section_list {
+    margin-bottom: 50px;
+  }
+  .simulate_section_list li {
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+  .simulate_button {
+    font-size: 14px;
+    gap: 3px;
+    padding: 5px 10px;
+  }
+
+  .simulate_button img {
+    height: 65%;
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .simulate_section_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .simulate_button {
+    font-size: 16px;
+    gap: 10px;
+    padding: 3px 12px;
+    grid-column: span 2;
+  }
+  .simulate_button img {
+    height: 80%;
+    width: auto;
+  }
+}

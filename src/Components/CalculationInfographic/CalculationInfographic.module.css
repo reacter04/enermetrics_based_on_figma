@@ -1,0 +1,162 @@
+.calculation_infographic {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 80px;
+  background-color: var(--primary-green-color);
+}
+
+.graphic_container {
+  display: flex;
+  margin: 0 50px;
+  width: 100%;
+  height: 85%;
+  border-radius: 25px;
+  background-color: white;
+  position: relative;
+}
+
+.images_infographic {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 30px;
+}
+
+.images_infographic img {
+  position: absolute;
+}
+
+.images_infographic img:first-child {
+  height: 50%;
+  top: 65px;
+  right: 180px;
+}
+
+.images_infographic img:nth-child(2) {
+  width: 55%;
+  top: 250px;
+}
+
+.images_infographic img:nth-child(3) {
+  width: 42%;
+  top: 290px;
+  right: -18px;
+}
+
+.images_infographic img:nth-child(4) {
+  width: 42%;
+  top: 330px;
+  right: 220px;
+}
+
+.images_infographic img:nth-child(5) {
+  width: 42%;
+  top: 330px;
+  right: 90px;
+}
+
+.images_infographic img:nth-child(6) {
+  width: 42%;
+  top: 330px;
+  right: -40px;
+}
+
+.calculation_info_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculation_info_container img {
+  width: 60%;
+  height: auto;
+}
+
+@media (max-width: 1280px) {
+  .calculation_infographic {
+    height: 550px;
+  }
+  .images_infographic img:first-child {
+    height: 32%;
+    top: 180px;
+    right: 100px;
+  }
+
+  .images_infographic img:nth-child(3) {
+    top: 280px;
+  }
+
+  .images_infographic img:nth-child(4) {
+    width: 35%;
+    top: 320px;
+    right: 170px;
+  }
+
+  .images_infographic img:nth-child(5) {
+    width: 35%;
+    top: 320px;
+    right: 90px;
+  }
+
+  .images_infographic img:nth-child(6) {
+    width: 35%;
+    top: 320px;
+    right: 10px;
+  }
+  .calculation_info_container img {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .calculation_infographic {
+    height: 500px;
+  }
+
+  .images_infographic img:first-child {
+    height: 28%;
+    top: 200px;
+  }
+
+  .images_infographic img:nth-child(4) {
+    width: 30%;
+    top: 320px;
+    right: 110px;
+  }
+
+  .images_infographic img:nth-child(5) {
+    width: 30%;
+    top: 320px;
+    right: 40px;
+  }
+
+  .images_infographic img:nth-child(6) {
+    width: 30%;
+    top: 320px;
+    right: -30px;
+  }
+  .calculation_info_container img {
+    width: 78%;
+    height: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .images_infographic {
+    display: none;
+  }
+  .calculation_info_container img {
+    width: 300px;
+    height: auto;
+  }
+}

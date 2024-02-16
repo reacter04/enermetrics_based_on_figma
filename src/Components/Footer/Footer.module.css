@@ -1,0 +1,18 @@
+.footer_container {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 40px;
+  font-size: 12px;
+}
+
+.footer_container div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.footer_container div span:nth-child(2) {
+  padding-right: 100px;
+  justify-self: center;
+  color: var(--primary-green-color);
+}
