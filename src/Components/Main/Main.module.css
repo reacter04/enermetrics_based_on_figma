@@ -3,7 +3,7 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 120px;
+  margin-bottom: 90px;
 }
 
 .first_section {
@@ -182,6 +182,9 @@
 }
 
 @media (max-width: 1280px) {
+  .home_page_all_info {
+    margin-bottom: 60px;
+  }
   .second_section_text_container h1 {
     font-size: 32px;
   }
@@ -210,6 +213,9 @@
 }
 
 @media (max-width: 1024px) {
+  .home_page_all_info {
+    margin-bottom: 40px;
+  }
   .second_section_text_container h1 {
     font-size: 25px;
   }
@@ -242,7 +248,16 @@
   }
 }
 
+@media (max-width: 800px) {
+  .home_page_all_info {
+    margin-bottom: 25px;
+  }
+}
+
 @media (max-width: 500px) {
+  .home_page_all_info {
+    margin-bottom: 20px;
+  }
   .benefit_text_container {
     flex: 3;
   }
