@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../Main/Main.module.css";
 import SchemaLogo from "../../Components/Assets/tout-savoir-sur-le-microgrid.png";
 import buildLogo from "../../Components/Assets/Screenshot 2022-11-03 at 16.17 2.png";
 import panelLogo from "../../Components/Assets/Screenshot 2022-11-04 at 00.48 2.png";
 import filterLogo from "../../Components/Assets/Screenshot 2022-11-08 at 17.05 2.png";
-
+import UtilityBill from "../PopUps/UtilityBill/UtilityBill";
+import { EnermetricsContext } from "../../Context";
 
 function Main() {
+  const { showUtilityPopup, utilityPopupRef} = useContext(EnermetricsContext);
+  
+
   return (
     <main className={styles.home_page_all_info}>
+      <div ref={utilityPopupRef}
+        className={`${styles.utility_bill_popup} ${
+          showUtilityPopup ? styles.openedPopup : ""
+        }`}
+      >
+        <UtilityBill/>
+      </div>
+      {!showUtilityPopup && (
       <section className={styles.first_section}>
         <div className={styles.first_section_text_container}>
           <h1>Find the optimal energy solutions for your facility.</h1>
@@ -21,7 +33,7 @@ function Main() {
         <div className={styles.schema_logo_conainter}>
           <img src={SchemaLogo} alt="schema-logo" />
         </div>
-      </section>
+      </section>)}
       <section className={styles.second_section}>
         <div className={styles.second_section_text_container}>
           <h1>Compare hundreds of energy solutions at once.</h1>

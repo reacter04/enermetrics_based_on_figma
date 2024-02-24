@@ -1,7 +1,13 @@
+.simulate_section{
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+
 .simulate_section_list {
   position: relative;
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: auto;
   gap: 3px;
   padding: 0;
@@ -30,6 +36,20 @@
 .simulate_button img {
   height: 85%;
   width: auto;
+}
+
+.simulate_option:nth-child(4) {
+  cursor: default;
+}
+
+.simulate_option input {
+  height: 80%;
+  width: 80%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  font-family: Montserrat, sans-serif;
 }
 
 .simulate_button {
@@ -65,17 +85,16 @@
 
 /*clasele pentru popupri*/
 
-.popup {
+.building_popup {
   z-index: 1000;
   position: absolute;
   top: 0px;
   left: 0px;
-  opacity: 0;
+  opacity: 0.6;
   visibility: hidden;
   transform: translateY(-60px);
-  transition: all 0.8s ease;
 }
-.popup.openedPopup {
+.building_popup.openedPopup {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
@@ -83,8 +102,9 @@
   cursor: auto;
 }
 
+
 @media (max-width: 1280px) {
-  .simulate_section_list{
+  .simulate_section_list {
     margin-top: 60px;
   }
   .simulate_section_list li {
@@ -128,10 +148,10 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .simulate_section_list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 30px;
   }
@@ -139,7 +159,7 @@
     font-size: 16px;
     gap: 10px;
     padding: 3px 12px;
-    grid-column: span 2;
+    grid-column: span 3;
   }
   .simulate_button img {
     height: 80%;

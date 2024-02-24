@@ -1,0 +1,178 @@
+.utility_bill_container {
+  z-index: 1000;
+  display: flex;
+  gap: 80px;
+  padding: 30px 45px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 1px 1px 3px 0.5px rgb(237, 237, 237);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+}
+
+.params_options_left_side,
+.params_options_right_side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_info_tag,
+.input_energy_tag {
+  display: flex;
+  align-items: center;
+  background: white;
+  position: absolute;
+  z-index: 1000;
+  top: 30px;
+  gap: 20px;
+  user-select: none;
+  padding-right: 60px;
+}
+
+.input_info_tag_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: #f7f7f7;
+  box-shadow: 1px 1px 3px 1px #b1b1b15d;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.select_top {
+  display: flex;
+  height: 60px;
+  margin-top: 9px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_info_bottom_container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.left_info_bottom_container li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.left_info_bottom_container li span {
+  width: 190px;
+}
+
+.title_input_fields,
+.input_fields_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_fields_container {
+  background: #f7f7f7;
+  box-shadow: 1px 1px 3px 1px #b1b1b15d;
+  border-radius: 7px;
+}
+
+.input_fields_for_padding {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: rgb(190, 190, 190);
+  margin: 7px 0;
+}
+
+.title_container,
+.for_each_input_container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+
+.for_each_input_container input {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  outline: none;
+  border: none;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.for_each_input_container input::-webkit-inner-spin-button,
+.for_each_input_container input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.select_energy_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  box-shadow: 1px 1px 3px 1px #b1b1b15d;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #a3a3a3;
+  letter-spacing: 1px;
+  background: #f7f7f7;
+  background-image: url("../../Assets/down-chevron.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  cursor: pointer;
+}
+
+.select_energy_options {
+  position: absolute;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 224px;
+  top: 52px;
+  left: 66px;
+  background: rgba(188, 143, 143, 0.18);
+  border-radius: 4px;
+  font-size: 18px;
+  gap: 8px;
+  padding: 8px 8px;
+}
+
+.select_energy_options > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  background: green;
+  border-radius: 8px;
+}

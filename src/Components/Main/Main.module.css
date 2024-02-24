@@ -53,6 +53,24 @@
   width: 100%;
 }
 
+.utility_bill_popup {
+  opacity: 0.6;
+  height: 0px;
+  visibility: hidden;
+  transform: translateY(-60px);
+}
+.utility_bill_popup.openedPopup {
+  height: 384px;
+  margin-top: -75px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+
+  transition: visibility 0.8s ease, transform 0.8s ease, opacity 0.8s ease;
+  cursor: auto;
+  margin-bottom: 60px;
+}
+
 @media (max-width: 1280px) {
   .first_section_text_container h1 {
     font-size: 32px;

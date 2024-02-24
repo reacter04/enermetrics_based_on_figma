@@ -8,6 +8,7 @@ import mountainImage from "../../Components/Assets/mountain.png";
 import hotelImage from "../../Components/Assets/Hotel_travel_holiday_vector_vacation_symbol 2.png";
 
 function HomePage() {
+
   return (
     <>
       <SimulateSection />
