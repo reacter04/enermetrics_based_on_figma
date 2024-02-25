@@ -80,7 +80,7 @@
   transform: translateY(-60px);
 }
 .energy_options_popup.openedPopup {
-  height: 580px;
+  height: 610px;
   margin-top: -75px;
   opacity: 1;
   visibility: visible;

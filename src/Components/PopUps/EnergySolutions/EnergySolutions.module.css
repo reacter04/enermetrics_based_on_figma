@@ -11,6 +11,10 @@
 .energy_solutions p:first-child {
   font-size: 20px;
   text-align: center;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1px; 
+  
 }
 
 .energy_options_container {
@@ -256,14 +260,14 @@ label span::after {
   }
 
   label span::after {
-    left: 12px;
-    bottom: 8px;
+    left: 8px;
+    bottom: 5px;
     opacity: 0;
   }
 
   .checkbox_each_container input:checked ~ span::after {
-    width: 8px;
-    height: 25px;
+    width: 5px;
+    height: 14px;
   }
 
   .checkbox_option_text_container {

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { EnermetricsContext } from "../../../Context";
 import styles from "./UtilityBill.module.css";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.module.css";
@@ -6,11 +7,17 @@ import calendarIcon from "../../Assets/calendar 1.png";
 import gasIcon from "../../Assets/gas 1.png";
 
 function UtilityBill() {
-  const [startDate, setStartDate] = useState(null);
   const [showDatePicker, setShowDatePiker] = useState(false);
   const [showOptionsEnergy, setShowOptionsEnergy] = useState(false);
-  const [energyOption, setEnergyOption] = useState(null);
-  
+
+  const {
+    valuesForUtilityBill,
+    setValuesForUtilityBill,
+    startDate,
+    setStartDate,
+    energyOption,
+    setEnergyOption,
+  } = useContext(EnermetricsContext);
 
   const inputTagRef = useRef(null);
   const energyOptionsRef = useRef(null);
@@ -19,8 +26,8 @@ function UtilityBill() {
   useEffect(() => {
     let handlerOutsideClick = (e) => {
       if (
-        !energyOptionsRef.current.contains(e.target) &&
-        !energyTagButton.current.contains(e.target)
+        !energyOptionsRef.current?.contains(e.target) &&
+        !energyTagButton.current?.contains(e.target)
       ) {
         setShowOptionsEnergy(false);
       }
@@ -82,7 +89,7 @@ function UtilityBill() {
                   selected={startDate}
                   autoFocus={showDatePicker}
                   onClickOutside={(e) => {
-                    if (!inputTagRef.current.contains(e.target))
+                    if (!inputTagRef.current?.contains(e.target))
                       setShowDatePiker(false);
                   }}
                   onChange={(date) => handleChangeInputDate(date)}
@@ -114,28 +121,49 @@ function UtilityBill() {
                 <div className={styles.title_container}>Gas</div>
               </div>
             </li>
-            {Array.from({ length: 6 }, (_, i) => i + 1).map((value, index) => {
-              return (
-                <li key={index}>
-                  <span>
-                    {formatDate(addMonths(value), "long") || "--------"}
-                  </span>
-                  <div className={styles.input_fields_container}>
-                    <div className={styles.input_fields_for_padding}>
-                      <div className={styles.for_each_input_container}>
-                        <input type="number" placeholder="kWh" />
-                      </div>
-                      <div className={styles.for_each_input_container}>
-                        <input
-                          type="number"
-                          placeholder={energyOption ? energyOption : "m³"}
-                        />
+            {valuesForUtilityBill
+              .slice(0, valuesForUtilityBill.length / 2)
+              .map((_, index) => {
+                return (
+                  <li key={index}>
+                    <span>
+                      {formatDate(addMonths(index), "long") || "--------"}
+                    </span>
+                    <div className={styles.input_fields_container}>
+                      <div className={styles.input_fields_for_padding}>
+                        <div className={styles.for_each_input_container}>
+                          <input
+                            onChange={(e) => {
+                              setValuesForUtilityBill((prev) =>
+                                prev.map((v, i) =>
+                                  i === index ? [e.target.value, v[1]] : v
+                                )
+                              );
+                            }}
+                            type="number"
+                            placeholder="kWh"
+                          />
+                        </div>
+                        <div className={styles.for_each_input_container}>
+                          <input
+                            onChange={(e) => {
+                              setValuesForUtilityBill((prev) =>
+                                prev.map((v, i) =>
+                                  i === index ? [v[0], e.target.value] : v
+                                )
+                              );
+                            }}
+                            type="number"
+                            placeholder={
+                              energyOption ? energyOption : "m³/GJ/thm"
+                            }
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              );
-            })}
+                  </li>
+                );
+              })}
           </ul>
         </div>
         {/* incepe partea dreapta a popupului */}
@@ -145,7 +173,7 @@ function UtilityBill() {
               <img src={gasIcon} alt="calendarIcon" />
               <span
                 ref={energyTagButton}
-                style={{color: energyOption? "black" : "#a3a3a3"}}
+                style={{ color: energyOption ? "black" : "#a3a3a3" }}
                 className={
                   !showOptionsEnergy
                     ? styles.select_energy_button
@@ -185,28 +213,49 @@ function UtilityBill() {
                 <div className={styles.title_container}>Gas</div>
               </div>
             </li>
-            {Array.from({ length: 6 }, (_, i) => i + 7).map((value, index) => {
-              return (
-                <li key={index}>
-                  <span>
-                    {formatDate(addMonths(value), "long") || "--------"}
-                  </span>
-                  <div className={styles.input_fields_container}>
-                    <div className={styles.input_fields_for_padding}>
-                      <div className={styles.for_each_input_container}>
-                        <input type="number" placeholder="kWh" />
-                      </div>
-                      <div className={styles.for_each_input_container}>
-                        <input
-                          type="number"
-                          placeholder={energyOption ? energyOption : "m³"}
-                        />
+            {valuesForUtilityBill
+              .slice(valuesForUtilityBill.length / 2)
+              .map((_, index) => {
+                return (
+                  <li key={index}>
+                    <span>
+                      {formatDate(addMonths(index + 6), "long") || "--------"}
+                    </span>
+                    <div className={styles.input_fields_container}>
+                      <div className={styles.input_fields_for_padding}>
+                        <div className={styles.for_each_input_container}>
+                          <input
+                            onChange={(e) => {
+                              setValuesForUtilityBill((prev) =>
+                                prev.map((v, i) =>
+                                  i === index + 6 ? [e.target.value, v[1]] : v
+                                )
+                              );
+                            }}
+                            type="number"
+                            placeholder="kWh"
+                          />
+                        </div>
+                        <div className={styles.for_each_input_container}>
+                          <input
+                            onChange={(e) => {
+                              setValuesForUtilityBill((prev) =>
+                                prev.map((v, i) =>
+                                  i === index + 6 ? [v[0], e.target.value] : v
+                                )
+                              );
+                            }}
+                            type="number"
+                            placeholder={
+                              energyOption ? energyOption : "m³/GJ/thm"
+                            }
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              );
-            })}
+                  </li>
+                );
+              })}
           </ul>
         </div>
       </div>

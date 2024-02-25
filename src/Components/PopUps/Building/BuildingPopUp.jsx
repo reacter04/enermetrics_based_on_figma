@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import countryList from "react-select-country-list";
 import styles from "./BuildingPopUp.module.css";
 import flagLogo from "../../Assets/flag1.png";
@@ -9,14 +9,8 @@ import { EnermetricsContext } from "../../../Context";
 
 function BuildingPopUp() {
   const options = useMemo(() => countryList().getData(), []);
-  const {setBuildingPlaceholderText } =
+  const {setBuildingPlaceholderText, valuesForBuilding, setValuesForBuilding } =
     useContext(EnermetricsContext);
-  const [valuesForBuilding, setValuesForBuilding] = useState({
-    country: "",
-    zipCode: "",
-    size: "",
-    type: "",
-  });
 
   const handlePopupDetails = (e) => {
     switch (e.target.name) {

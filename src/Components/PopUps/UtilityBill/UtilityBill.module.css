@@ -351,6 +351,10 @@
     font-size: 12px;
   }
 
+  .values_info_container:first-child {
+    background-color: black;
+  }
+
   .values_info_container {
     font-size: 12px;
   }

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./EnergySolutions.module.css";
 import cornerDownIcon from "../../Assets/corner-down-right 1.png";
+import { EnermetricsContext } from "../../../Context";
 
 function EnergySolutions() {
+  const {setValuesForSolutions } =
+    useContext(EnermetricsContext);
+
+  const handleChangeCheckbox = (checkbox) => {
+    setValuesForSolutions((prev) =>
+      prev.map((value, index) => (index === checkbox ? !value : value))
+    );
+  };
+
   return (
     <div className={styles.energy_solutions}>
       <p>
@@ -19,7 +29,7 @@ function EnergySolutions() {
               <p>Electricity from sunlight</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(0)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -30,7 +40,7 @@ function EnergySolutions() {
               <p>Electricity from wind</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(1)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -41,7 +51,7 @@ function EnergySolutions() {
               <p>Electricity from wind</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(2)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -52,12 +62,12 @@ function EnergySolutions() {
               <p>Electricity and heat from Earth</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(3)} type="checkbox" />
               <span></span>
             </label>
           </div>
         </div>
-       {/*aici incepe partea dreapta*/}
+        {/*aici incepe partea dreapta*/}
         <div className={styles.energy_options_right_side}>
           <div className={styles.checkbox_each_container}>
             <img src={cornerDownIcon} alt="cornerIcon" />
@@ -66,7 +76,7 @@ function EnergySolutions() {
               <p>Electricity and heat from gas turbines</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(4)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -77,7 +87,7 @@ function EnergySolutions() {
               <p>Electricity and heat from sunlight</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(5)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -89,7 +99,7 @@ function EnergySolutions() {
               <p>Electricity storage</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(6)} type="checkbox" />
               <span></span>
             </label>
           </div>
@@ -100,7 +110,7 @@ function EnergySolutions() {
               <p>Gas storage</p>
             </div>
             <label>
-              <input type="checkbox" />
+              <input onChange={() => handleChangeCheckbox(7)} type="checkbox" />
               <span></span>
             </label>
           </div>
