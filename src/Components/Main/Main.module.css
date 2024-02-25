@@ -53,20 +53,39 @@
   width: 100%;
 }
 
+/*popupul 2*/
 .utility_bill_popup {
-  opacity: 0.6;
+  opacity: 0.8;
   height: 0px;
   visibility: hidden;
   transform: translateY(-60px);
 }
 .utility_bill_popup.openedPopup {
-  height: 384px;
+  height: 700px;
   margin-top: -75px;
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
+  transition: visibility 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  cursor: auto;
+  margin-bottom: 60px;
+}
 
-  transition: visibility 0.8s ease, transform 0.8s ease, opacity 0.8s ease;
+/*popupul 3*/
+
+.energy_options_popup {
+  opacity: 0.8;
+  height: 0px;
+  visibility: hidden;
+  transform: translateY(-60px);
+}
+.energy_options_popup.openedPopup {
+  height: 580px;
+  margin-top: -75px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: visibility 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
   cursor: auto;
   margin-bottom: 60px;
 }
@@ -82,6 +101,12 @@
 
   .first_section_text_container span {
     font-size: 16px;
+  }
+  .utility_bill_popup.openedPopup {
+    height: 650px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 460px;
   }
 }
 
@@ -101,6 +126,14 @@
   .first_section_text_container span {
     font-size: 12px;
   }
+  .utility_bill_popup.openedPopup {
+    height: 550px;
+    margin-top: -46px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 440px;
+    margin-top: -46px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -119,6 +152,12 @@
   .first_section_text_container span {
     font-size: 12px;
   }
+  .utility_bill_popup.openedPopup {
+    height: 1030px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 305px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -127,6 +166,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+  }
+  .utility_bill_popup.openedPopup {
+    height: 1030px;
+    margin-top: -77px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 480px;
+    margin-top: -77px;
   }
 }
 

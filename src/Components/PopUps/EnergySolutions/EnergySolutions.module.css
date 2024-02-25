@@ -1,0 +1,299 @@
+.energy_solutions {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 1px 1px 3px 0.5px rgb(237, 237, 237);
+}
+
+.energy_solutions p:first-child {
+  font-size: 20px;
+  text-align: center;
+}
+
+.energy_options_container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.energy_options_container h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.energy_options_left_side,
+.energy_options_right_side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 480px;
+}
+
+.checkbox_each_container {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 25px;
+  margin: 15px 0;
+}
+
+.checkbox_each_container img {
+  width: 50px;
+  margin-top: -20px;
+}
+
+.checkbox_each_container label {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.checkbox_each_container input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+label span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1.5px solid #000000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+label span::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  width: 0;
+  height: 0;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.checkbox_each_container input:checked ~ span::after {
+  width: 15px;
+  height: 40px;
+  opacity: 1;
+}
+
+.checkbox_option_text_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+}
+
+.checkbox_option_text_container h3 {
+  margin: 0;
+}
+
+.checkbox_option_text_container {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1280px) {
+  .energy_solutions {
+    padding: 10px 55px;
+  }
+
+  .energy_solutions p:first-child {
+    text-align: start;
+    font-size: 14px;
+  }
+
+  .energy_options_left_side,
+  .energy_options_right_side {
+    width: 380px;
+  }
+  .energy_options_container {
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .energy_options_container h2 {
+    font-size: 20px;
+  }
+
+  .checkbox_each_container {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  .checkbox_each_container img {
+    width: 35px;
+    margin-top: -10px;
+  }
+
+  .checkbox_each_container label {
+    width: 25px;
+    height: 25px;
+  }
+
+  label span::after {
+    left: 13px;
+    bottom: 10px;
+    opacity: 0;
+  }
+
+  .checkbox_each_container input:checked ~ span::after {
+    width: 12px;
+    height: 30px;
+  }
+
+  .checkbox_option_text_container {
+    padding: 0 25px;
+  }
+
+  .checkbox_option_text_container h3 {
+    font-size: 16px;
+  }
+  .checkbox_option_text_container p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .energy_solutions {
+    padding: 10px 25px;
+  }
+
+  .energy_solutions p:first-child {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .energy_options_container {
+    justify-content: space-around;
+  }
+  .energy_options_left_side,
+  .energy_options_right_side {
+    width: 310px;
+  }
+  .energy_options_container {
+    margin-top: 20px;
+  }
+
+  .energy_options_container h2 {
+    font-size: 16px;
+  }
+
+  .checkbox_each_container {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  .checkbox_each_container img {
+    width: 35px;
+    margin-top: -10px;
+  }
+
+  .checkbox_each_container label {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox_each_container label {
+    width: 20px;
+    height: 20px;
+  }
+
+  label span::after {
+    left: 12px;
+    bottom: 8px;
+    opacity: 0;
+  }
+
+  .checkbox_each_container input:checked ~ span::after {
+    width: 8px;
+    height: 25px;
+  }
+
+  .checkbox_option_text_container {
+    padding: 0 10px;
+  }
+
+  .checkbox_option_text_container h3 {
+    font-size: 14px;
+  }
+  .checkbox_option_text_container p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .energy_solutions p:first-child {
+    font-size: 12px;
+  }
+  .energy_solutions {
+    padding: 14px 14px;
+  }
+  .checkbox_each_container {
+    margin: 6px 0;
+    padding-left: 6px;
+  }
+  .energy_options_container h2 {
+    margin-left: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .checkbox_each_container img {
+    width: 18px;
+    margin-top: -2px;
+  }
+  .checkbox_each_container label {
+    width: 14px;
+    height: 14px;
+  }
+
+  label span::after {
+    left: 12px;
+    bottom: 8px;
+    opacity: 0;
+  }
+
+  .checkbox_each_container input:checked ~ span::after {
+    width: 8px;
+    height: 25px;
+  }
+
+  .checkbox_option_text_container {
+    padding: 0 6px;
+  }
+
+  .checkbox_option_text_container h3 {
+    font-size: 11px;
+  }
+  .checkbox_option_text_container p {
+    margin: 4px 0;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .energy_options_container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .energy_options_container h2 {
+    margin-left: 8px;
+    margin: 5px 0px;
+  }
+  .energy_solutions p:first-child {
+    margin-bottom: 0;
+  }
+  .energy_options_left_side,
+  .energy_options_right_side {
+    flex: 1;
+    width: inherit;
+  }
+}

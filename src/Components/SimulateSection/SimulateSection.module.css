@@ -1,4 +1,4 @@
-.simulate_section{
+.simulate_section {
   width: 90%;
   margin: auto;
   position: relative;
@@ -90,7 +90,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  opacity: 0.6;
+  opacity: 0.8;
   visibility: hidden;
   transform: translateY(-60px);
 }
@@ -98,10 +98,9 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
   cursor: auto;
 }
-
 
 @media (max-width: 1280px) {
   .simulate_section_list {
@@ -117,9 +116,8 @@
     height: 70%;
   }
   .simulate_button {
-    font-size: 16px;
     gap: 5px;
-    padding: 5px 12px;
+    padding: 5px 30px;
   }
 
   .simulate_button img {
@@ -137,14 +135,19 @@
     margin-bottom: 0px;
   }
   .simulate_button {
-    font-size: 14px;
     gap: 3px;
-    padding: 5px 10px;
+    padding: 5px 25px;
   }
 
   .simulate_button img {
     height: 65%;
     width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .simulate_button {
+    padding: 5px 15px;
   }
 }
 

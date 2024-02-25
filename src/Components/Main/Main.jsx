@@ -6,11 +6,12 @@ import panelLogo from "../../Components/Assets/Screenshot 2022-11-04 at 00.48 2.
 import filterLogo from "../../Components/Assets/Screenshot 2022-11-08 at 17.05 2.png";
 import UtilityBill from "../PopUps/UtilityBill/UtilityBill";
 import { EnermetricsContext } from "../../Context";
+import EnergySolutions from "../PopUps/EnergySolutions/EnergySolutions";
 
 function Main() {
-  const { showUtilityPopup, utilityPopupRef} = useContext(EnermetricsContext);
+  const { showUtilityPopup, showEnergySolutionsPopup, utilityPopupRef, energySolutionsRef} = useContext(EnermetricsContext);
   
-
+  
   return (
     <main className={styles.home_page_all_info}>
       <div ref={utilityPopupRef}
@@ -20,7 +21,14 @@ function Main() {
       >
         <UtilityBill/>
       </div>
-      {!showUtilityPopup && (
+      <div ref={energySolutionsRef}
+        className={`${styles.energy_options_popup} ${
+          showEnergySolutionsPopup ? styles.openedPopup : ""
+        }`}
+      >
+        <EnergySolutions/>
+      </div>
+      {!showUtilityPopup && !showEnergySolutionsPopup && (
       <section className={styles.first_section}>
         <div className={styles.first_section_text_container}>
           <h1>Find the optimal energy solutions for your facility.</h1>

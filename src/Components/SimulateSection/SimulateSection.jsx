@@ -13,11 +13,17 @@ function SimulateSection() {
     showUtilityPopup,
     setShowUtilityPopup,
     utilityPopupRef,
+    showEnergySolutionsPopup,
+    setShowEnergySolutionsPopup,
+    energySolutionsRef,
     buildingPlaceholderText,
   } = useContext(EnermetricsContext);
 
   let buildingPopupRef = useRef();
   let utilityInListRef = useRef();
+  let energyInListRef = useRef()
+  let simulateButtonRef = useRef()
+
 
   useEffect(() => {
     let handlerOutsideClickFirst = (e) => {
@@ -26,13 +32,23 @@ function SimulateSection() {
     let handlerOutsideClickSecond = (e) => {
       if (
         !utilityInListRef.current.contains(e.target) &&
-        !utilityPopupRef.current.contains(e.target)
+        !utilityPopupRef.current.contains(e.target) &&
+        !simulateButtonRef.current.contains(e.target) 
       )
         setShowUtilityPopup(false);
     };
+    let handlerOutsideClickThird = (e) => {
+      if (
+        !energySolutionsRef.current.contains(e.target) &&
+        !energyInListRef.current.contains(e.target) &&
+        !simulateButtonRef.current.contains(e.target) 
+      )
+        setShowEnergySolutionsPopup(false);
+    };
     document.addEventListener("click", handlerOutsideClickFirst);
     document.addEventListener("click", handlerOutsideClickSecond);
-  }, [setShowUtilityPopup, utilityPopupRef]);
+    document.addEventListener("click", handlerOutsideClickThird);
+  }, [setShowUtilityPopup, utilityPopupRef, energySolutionsRef, setShowEnergySolutionsPopup]);
 
   return (
     <section className={styles.simulate_section}>
@@ -43,7 +59,13 @@ function SimulateSection() {
           className={styles.simulate_option}
         >
           <img src={homeLogo} alt="home" />
-          <span style={{color: buildingPlaceholderText === "Completed"? "green" : ""}}>{buildingPlaceholderText}</span>
+          <span
+            style={{
+              color: buildingPlaceholderText === "Completed" ? "green" : "",
+            }}
+          >
+            {buildingPlaceholderText}
+          </span>
           <div
             className={`${styles.building_popup} ${
               showPopup ? styles.openedPopup : ""
@@ -60,11 +82,17 @@ function SimulateSection() {
           <img src={zapLogo} alt="zap" />
           <span>Utility bill?</span>
         </li>
-        <li className={styles.simulate_option}>
+        <li
+        ref={energyInListRef}
+         onClick={() => setShowEnergySolutionsPopup(!showEnergySolutionsPopup)} 
+        className={styles.simulate_option}>
           <img src={sunLogo} alt="sun" />
           <span>Energy Solutions?</span>
         </li>
-        <li className={styles.simulate_button}>
+        <li
+          ref={simulateButtonRef}
+          className={styles.simulate_button}
+        >
           <img src={simulateLogo} alt="usd" />
           <span>Simulate</span>
         </li>
