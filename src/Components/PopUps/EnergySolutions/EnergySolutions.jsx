@@ -4,8 +4,7 @@ import cornerDownIcon from "../../Assets/corner-down-right 1.png";
 import { EnermetricsContext } from "../../../Context";
 
 function EnergySolutions() {
-  const {setValuesForSolutions } =
-    useContext(EnermetricsContext);
+  const { setValuesForSolutions } = useContext(EnermetricsContext);
 
   const handleChangeCheckbox = (checkbox) => {
     setValuesForSolutions((prev) =>
@@ -91,7 +90,7 @@ function EnergySolutions() {
               <span></span>
             </label>
           </div>
-          <h2>Energy generation</h2>
+          <h2>Energy storage</h2>
           <div className={styles.checkbox_each_container}>
             <img src={cornerDownIcon} alt="cornerIcon" />
             <div className={styles.checkbox_option_text_container}>
