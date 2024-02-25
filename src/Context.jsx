@@ -11,14 +11,14 @@ const EnermetricsContextProvider = ({ children }) => {
 
   const utilityPopupRef = useRef(null);
   const energySolutionsRef = useRef(null);
-  
+
   const [valuesForBuilding, setValuesForBuilding] = useState({
     country: "",
     zipCode: "",
     size: "",
     type: "",
   });
-  
+
   const [valuesForUtilityBill, setValuesForUtilityBill] = useState([
     ["", ""],
     ["", ""],
@@ -33,36 +33,37 @@ const EnermetricsContextProvider = ({ children }) => {
     ["", ""],
     ["", ""],
   ]);
-  
+
+  const [valuesForSolutions, setValuesForSolutions] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
   const [buildingPlaceholderText, setBuildingPlaceholderText] =
     useState("Building?");
-console.log(valuesForUtilityBill)
-
 
   const [utilityPlaceholderText, setUtilityPlaceholderText] =
-  useState("Utility bill?");
+    useState("Utility bill?");
 
   const [solutionsPlaceholderText, setSolutionsPlaceholderText] =
-  useState("Energy solutions?");
-  
-  const [valuesForSolutions, setValuesForSolutions] = useState([false, false, false, false, false, false, false, false,])
-
+    useState("Energy solutions?");
 
 
   const handleSolutionsPlaceholderText = () => {
-
     if (valuesForSolutions.every((value) => value === false)) {
       setSolutionsPlaceholderText("Energy solutions?");
     }
     if (valuesForSolutions.some((value) => value !== false)) {
-      setSolutionsPlaceholderText("Is being completed...");
-    }
-    if (valuesForSolutions.every((value) => value !== false)) {
       setSolutionsPlaceholderText("Completed");
     }
-  }
 
-
+  };
 
   const handleUtilityPlaceholderText = () => {
     if (
@@ -77,7 +78,7 @@ console.log(valuesForUtilityBill)
       )
     ) {
       setUtilityPlaceholderText("Is being completed...");
-    }  else if (
+    } else if (
       valuesForUtilityBill.every(
         (subArray) =>
           subArray.every((element) => element !== "") &&
@@ -88,10 +89,6 @@ console.log(valuesForUtilityBill)
       setUtilityPlaceholderText("Completed");
     }
   };
-
-
-
-
 
   const contextValues = {
     showUtilityPopup,
