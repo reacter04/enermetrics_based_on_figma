@@ -10,7 +10,7 @@ function Offer() {
 
   return (
     <div className={styles.offer_container}>
-      <div className={styles.type_of_energy_products}>
+      <div className={styles.energy_products}>
         <div className={styles.energy_generation_basic_info}>
           <img src={panelIcon} alt="storageIcon" />
           <div className={styles.product_basic_text}>
@@ -30,7 +30,85 @@ function Offer() {
           </div>
         </div>
       </div>
-      <div className={styles.product_details}>1</div>
+      <div className={styles.product_details}>
+        <div className={styles.energy_type}>
+          <span></span>
+          <strong>
+            <span>Electricity (kWh)</span>
+          </strong>
+          <strong>
+            <span>Gas (m3)</span>
+          </strong>
+          <strong>
+            <span>Energy bill ($)</span>
+          </strong>
+          <strong>
+            <span>CO2e (mt)</span>
+          </strong>
+        </div>
+        <div className={styles.energy_values_container}>
+          <div className={styles.energy_values}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+              }}
+            >
+              <strong>
+                <span>Before</span>
+              </strong>
+              <strong>
+                <span>(annual)</span>
+              </strong>
+            </div>
+            <span>2,173,821</span>
+            <span>200,742</span>
+            <span>893,015</span>
+            <span>869</span>
+          </div>
+          <div className={styles.energy_values}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+              }}
+            >
+              <strong>
+                <span>After</span>
+              </strong>
+              <strong>
+                <span>(annual)</span>
+              </strong>
+            </div>
+            <span>553,710</span>
+            <span>47,612</span>
+            <span>304,752</span>
+            <span>215</span>
+          </div>
+          <div className={styles.energy_values}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                textAlign: "center",
+              }}
+            >
+              <strong>
+                <span>Savings</span>
+              </strong>
+              <strong>
+                <span>(lifetime)</span>
+              </strong>
+            </div>
+            <span>1,620,111</span>
+            <span>153,130</span>
+            <span>588,263</span>
+            <span>654</span>
+          </div>
+        </div>
+      </div>
       <div className={styles.product_costs}>
         <span>
           <strong> Installation cost</strong>

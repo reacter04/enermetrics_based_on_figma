@@ -23,12 +23,12 @@
   margin-bottom: 40px;
 }
 
-.pre_results_option_first h2, 
-.pre_results_option_second h2{
+.pre_results_option_first h2,
+.pre_results_option_second h2 {
   font-weight: 500;
 }
 
-.pre_results_option_first span, 
+.pre_results_option_first span,
 .pre_results_option_second span {
   padding: 15px 0;
   text-align: center;
@@ -50,6 +50,7 @@
 
 .pre_results_option_first span:active,
 .pre_results_option_second span:active {
+  border: solid 2px rgb(1, 103, 70);
   background-color: rgb(1, 103, 70);
 }
 
