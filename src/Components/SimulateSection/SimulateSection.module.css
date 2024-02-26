@@ -67,7 +67,7 @@
   padding: 5px 25px;
   border-radius: 10px;
   transition: all 0.15s ease;
-  box-shadow: 1px 1px 8px 1px #6565655d;
+  box-shadow: 1px 1px 3px 1px #656565;
   user-select: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -75,13 +75,13 @@
 
 .simulate_button:hover {
   background: #00865b;
-  box-shadow: 1px 1px 4px 2px #6b6b6b5d;
+  box-shadow: 1px 1px 4px 1px #363636;
 }
 
 .simulate_button:active {
   background-color: #006a48;
+  box-shadow: 1px 1px 4px 1px #363636;
 }
-
 
 /*clasele pentru popupri*/
 
@@ -169,5 +169,3 @@
     width: auto;
   }
 }
-
-

@@ -42,7 +42,7 @@
   user-select: none;
 }
 
-.pre_results_option_first span:hover
+.pre_results_option_first span:hover,
 .pre_results_option_second span:hover {
   background-color: var(--primary-green-color);
   color: white;
@@ -78,6 +78,7 @@
   font-size: 22px;
   font-weight: 700;
   color: #a0a0a0;
+  user-select: none;
 }
 
 /*popupul 2*/
