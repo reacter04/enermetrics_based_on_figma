@@ -228,7 +228,7 @@
   .heart_icon {
     width: 20px;
   }
-  
+
   .energy_products {
     flex-direction: row;
     width: 100%;
@@ -236,11 +236,9 @@
 
   .energy_generation_basic_info,
   .energy_storage_basic_info {
-
     justify-content: center;
     width: 100%;
   }
-
 
   .icon_energy_conainer {
     width: 60px;
@@ -264,7 +262,7 @@
     font-size: 11px;
   }
 
-  .energy_type span{
+  .energy_type span {
     font-size: 10px;
   }
 
@@ -288,7 +286,7 @@
 
 @media (max-width: 800px) {
   .offer_container {
-    padding: 7px 3px;
+    padding: 20px 3px;
   }
   .energy_products {
     margin-top: 30px;
@@ -296,5 +294,4 @@
   .icon_energy_conainer {
     width: 50px;
   }
-
 }
