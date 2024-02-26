@@ -142,30 +142,30 @@
 @media (max-width: 1024px) {
   .utility_bill_popup.openedPopup {
     height: 550px;
-    margin-top: -46px;
+    margin-top: -85px;
   }
   .energy_options_popup.openedPopup {
-    height: 440px;
-    margin-top: -46px;
+    height: 470px;
+    margin-top: -85px;
   }
 }
 
 @media (max-width: 800px) {
   .utility_bill_popup.openedPopup {
-    height: 1030px;
+    height: 1010px;
   }
   .energy_options_popup.openedPopup {
-    height: 305px;
+    height: 290px;
   }
 }
 
 @media (max-width: 500px) {
   .utility_bill_popup.openedPopup {
-    height: 1030px;
-    margin-top: -77px;
+    height: 1040px;
+    margin-top: -116px;
   }
   .energy_options_popup.openedPopup {
-    height: 480px;
-    margin-top: -77px;
+    height: 490px;
+    margin-top: -116px;
   }
 }

@@ -38,8 +38,6 @@ function SimulationResults() {
     }
   };
 
-  console.log(generatedOffers);
-
   return (
     <section className={styles.simulation_results_section}>
       <div className={styles.simulation_results_content}>

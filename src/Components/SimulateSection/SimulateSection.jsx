@@ -32,7 +32,6 @@ function SimulateSection() {
 
   const navigate = useNavigate();
 
-
   let buildingPopupRef = useRef();
   let utilityInListRef = useRef();
   let energyInListRef = useRef();
