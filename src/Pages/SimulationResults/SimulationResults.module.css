@@ -21,6 +21,7 @@
   border-radius: 12px;
   background-color: white;
   margin-bottom: 40px;
+  gap: 4px;
 }
 
 .pre_results_option_first h2,
@@ -84,15 +85,6 @@
 }
 
 /*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
-/*popupul 2*/
 .utility_bill_popup {
   opacity: 0.8;
   height: 0px;
@@ -131,6 +123,21 @@
 }
 
 @media (max-width: 1280px) {
+  .pre_results_option_first h2,
+  .pre_results_option_second h2 {
+    font-size: 16px;
+  }
+  .pre_results_option_first span,
+  .pre_results_option_second span {
+    padding: 10px 0;
+    width: 160px;
+  }
+
+  .filter_criteria {
+    height: 60px;
+    font-size: 18px;
+  }
+
   .utility_bill_popup.openedPopup {
     height: 650px;
   }
@@ -140,6 +147,26 @@
 }
 
 @media (max-width: 1024px) {
+  .pre_results_option_first,
+  .pre_results_option_second {
+    padding: 10px 20px 10px 30px;
+  }
+
+  .pre_results_option_first h2,
+  .pre_results_option_second h2 {
+    font-size: 14px;
+  }
+  .pre_results_option_first span,
+  .pre_results_option_second span {
+    padding: 6px 0;
+    width: 130px;
+    font-size: 12px;
+  }
+
+  .filter_criteria {
+    height: 30px;
+    font-size: 16px;
+  }
   .utility_bill_popup.openedPopup {
     height: 550px;
     margin-top: -85px;
@@ -151,6 +178,26 @@
 }
 
 @media (max-width: 800px) {
+  .pre_results_option_first,
+  .pre_results_option_second {
+    padding: 8px 15px 8px 20px;
+  }
+
+  .pre_results_option_first h2,
+  .pre_results_option_second h2 {
+    font-size: 12px;
+  }
+  .pre_results_option_first span,
+  .pre_results_option_second span {
+    padding: 5px 0;
+    width: 120px;
+    font-size: 10px;
+  }
+
+  .filter_criteria {
+    height: 25px;
+    font-size: 12px;
+  }
   .utility_bill_popup.openedPopup {
     height: 1010px;
   }
@@ -160,6 +207,32 @@
 }
 
 @media (max-width: 500px) {
+
+  .pre_results_option_first,
+  .pre_results_option_second {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 10px;
+    margin-bottom: 25px;
+  }
+
+  .pre_results_option_first h2,
+  .pre_results_option_second h2 {
+    font-size: 12px;
+  }
+  .pre_results_option_first span,
+  .pre_results_option_second span {
+    padding: 7px 0;
+    width: 120px;
+    font-size: 10px;
+  }
+
+  .filter_criteria {
+    height: 20px;
+    font-size: 12px;
+  }
+
+
   .utility_bill_popup.openedPopup {
     height: 1040px;
     margin-top: -116px;
