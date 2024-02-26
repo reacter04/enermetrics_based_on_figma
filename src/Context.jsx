@@ -2,6 +2,12 @@ import React, { createContext, useRef, useState } from "react";
 
 export const EnermetricsContext = createContext();
 
+const offers = [
+  { pv: "9,500 kW", chp: "12,500 kW", totalAmount: "$742,000" },
+  { pv: "12,500 kW", chp: "16,500 kW", totalAmount: "$985,500" },
+  { pv: "14,500 kW", chp: "18,000 kW", totalAmount: "$1,180,000" },
+];
+
 const EnermetricsContextProvider = ({ children }) => {
   const [showUtilityPopup, setShowUtilityPopup] = useState(false);
   const [startDate, setStartDate] = useState(null);
@@ -44,6 +50,8 @@ const EnermetricsContextProvider = ({ children }) => {
     false,
     false,
   ]);
+
+  const [generatedOffers, setGeneratedOffers] = useState(offers);
 
   const [buildingPlaceholderText, setBuildingPlaceholderText] =
     useState("Building?");
@@ -111,6 +119,8 @@ const EnermetricsContextProvider = ({ children }) => {
     handleUtilityPlaceholderText,
     solutionsPlaceholderText,
     handleSolutionsPlaceholderText,
+    generatedOffers,
+    setGeneratedOffers,
   };
 
   return (

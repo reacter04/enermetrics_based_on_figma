@@ -11,6 +11,7 @@ function SimulationResults() {
     showEnergySolutionsPopup,
     utilityPopupRef,
     energySolutionsRef,
+    generatedOffers,
   } = useContext(EnermetricsContext);
 
   return (
@@ -53,7 +54,14 @@ function SimulationResults() {
             <div className={styles.filter_criteria}>Net Present Value</div>
           </div>
         </div>
-        <Offer/>
+        {generatedOffers.map((value, index) => (
+          <Offer
+            key={index}
+            pv={value.pv}
+            chp={value.chp}
+            totalAmount={value.totalAmount}
+          />
+        ))}
       </div>
     </section>
   );
