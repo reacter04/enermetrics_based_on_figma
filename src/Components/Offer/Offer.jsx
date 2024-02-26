@@ -5,7 +5,7 @@ import greenHeartIcon from "../Assets/green_heart.png";
 import storageIcon from "../Assets/istockphoto-1390244722-612x612 3.png";
 import panelIcon from "../Assets/solar-panel-isometric-icon-design-vector 4.png";
 
-function Offer({ pv, chp, totalAmount }) {
+function Offer({ pv, chp, initialCost, totalAmount }) {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -115,9 +115,9 @@ function Offer({ pv, chp, totalAmount }) {
       </div>
       <div className={styles.product_costs}>
         <span>
-          <strong> Installation cost</strong>
+          <strong>Installation cost</strong>
         </span>
-        <span>$179,000</span>
+        <span>{initialCost}</span>
         <span>
           <strong>Net Present Value</strong>
         </span>

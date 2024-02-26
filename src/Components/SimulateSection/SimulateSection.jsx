@@ -32,6 +32,7 @@ function SimulateSection() {
 
   const navigate = useNavigate();
 
+
   let buildingPopupRef = useRef();
   let utilityInListRef = useRef();
   let energyInListRef = useRef();
@@ -78,6 +79,8 @@ function SimulateSection() {
   ]);
 
   const notify = () => {
+   
+
     if (
       solutionsPlaceholderText === "Completed" &&
       utilityPlaceholderText === "Completed" &&

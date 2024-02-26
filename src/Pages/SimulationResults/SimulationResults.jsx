@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./SimulationResults.module.css";
 import UtilityBill from "../../Components/PopUps/UtilityBill/UtilityBill";
 import EnergySolutions from "../../Components/PopUps/EnergySolutions/EnergySolutions";
@@ -12,7 +12,33 @@ function SimulationResults() {
     utilityPopupRef,
     energySolutionsRef,
     generatedOffers,
+    setGeneratedOffers,
   } = useContext(EnermetricsContext);
+
+  const [criteria, setCriteria] = useState("PV");
+
+  const handleSelectedCriteria = (criteria) => {
+    setCriteria(criteria);
+    if (criteria === "PV") {
+      setGeneratedOffers((prev) =>
+        prev.slice().sort((a, b) => parseFloat(a.pv) - parseFloat(b.pv))
+      );
+    } else if (criteria === "CHP") {
+      setGeneratedOffers((prev) =>
+        prev.slice().sort((a, b) => parseFloat(a.chp) - parseFloat(b.chp))
+      );
+    } else if (criteria === "Net Present Value") {
+      setGeneratedOffers((prev) =>
+        prev.slice().sort((a, b) => {
+          const totalAmountA = parseFloat(a.totalAmount.replace(/[$,]/g, ""));
+          const totalAmountB = parseFloat(b.totalAmount.replace(/[$,]/g, ""));
+          return totalAmountA - totalAmountB;
+        })
+      );
+    }
+  };
+
+  console.log(generatedOffers);
 
   return (
     <section className={styles.simulation_results_section}>
@@ -49,9 +75,29 @@ function SimulationResults() {
         </div>
         <div className={styles.filter_bar}>
           <div className={styles.filter_container_for_padding}>
-            <div className={styles.filter_criteria}>PV</div>
-            <div className={styles.filter_criteria}>CHP</div>
-            <div className={styles.filter_criteria}>Net Present Value</div>
+            <div
+              onClick={() => handleSelectedCriteria("PV")}
+              style={{ color: criteria === "PV" ? "black" : "#a3a3a3" }}
+              className={styles.filter_criteria}
+            >
+              PV
+            </div>
+            <div
+              onClick={() => handleSelectedCriteria("CHP")}
+              style={{ color: criteria === "CHP" ? "black" : "#a3a3a3" }}
+              className={styles.filter_criteria}
+            >
+              CHP
+            </div>
+            <div
+              onClick={() => handleSelectedCriteria("Net Present Value")}
+              style={{
+                color: criteria === "Net Present Value" ? "black" : "#a3a3a3",
+              }}
+              className={styles.filter_criteria}
+            >
+              Net Present Value
+            </div>
           </div>
         </div>
         {generatedOffers.map((value, index) => (
@@ -60,6 +106,7 @@ function SimulationResults() {
             pv={value.pv}
             chp={value.chp}
             totalAmount={value.totalAmount}
+            initialCost={value.initialCost}
           />
         ))}
       </div>

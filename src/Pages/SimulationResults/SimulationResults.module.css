@@ -8,7 +8,7 @@
   width: 90%;
   margin: auto;
   padding-top: 40px;
-  padding-bottom: 400px;
+  padding-bottom: 300px;
 }
 
 .pre_results_option_first,
@@ -80,6 +80,7 @@
   font-weight: 700;
   color: #a0a0a0;
   user-select: none;
+  cursor: pointer;
 }
 
 /*popupul 2*/

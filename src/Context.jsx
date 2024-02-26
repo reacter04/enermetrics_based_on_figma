@@ -3,9 +3,9 @@ import React, { createContext, useRef, useState } from "react";
 export const EnermetricsContext = createContext();
 
 const offers = [
-  { pv: "9,500 kW", chp: "12,500 kW", totalAmount: "$742,000" },
-  { pv: "12,500 kW", chp: "16,500 kW", totalAmount: "$985,500" },
-  { pv: "14,500 kW", chp: "18,000 kW", totalAmount: "$1,180,000" },
+  { pv: "9,500 kW", chp: "12,500 kW", initialCost: "165,000", totalAmount: "$1.142,000" },
+  { pv: "12,500 kW", chp: "11,500 kW",initialCost: "145,000", totalAmount: "$985,500" },
+  { pv: "8,500 kW", chp: "18,000 kW",initialCost: "244,500",  totalAmount: "$680,000" },
 ];
 
 const EnermetricsContextProvider = ({ children }) => {
