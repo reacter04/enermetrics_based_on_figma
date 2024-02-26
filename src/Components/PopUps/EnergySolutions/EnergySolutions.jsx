@@ -4,8 +4,10 @@ import cornerDownIcon from "../../Assets/corner-down-right 1.png";
 import { EnermetricsContext } from "../../../Context";
 
 function EnergySolutions() {
-  const { setValuesForSolutions } = useContext(EnermetricsContext);
+  const { valuesForSolutions, setValuesForSolutions } =
+    useContext(EnermetricsContext);
 
+  /* aici gestionam modificarea obiectului care include toate checkboxurile*/
   const handleChangeCheckbox = (checkbox) => {
     setValuesForSolutions((prev) =>
       prev.map((value, index) => (index === checkbox ? !value : value))
@@ -28,7 +30,11 @@ function EnergySolutions() {
               <p>Electricity from sunlight</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(0)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[0]}
+                onChange={() => handleChangeCheckbox(0)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -39,7 +45,11 @@ function EnergySolutions() {
               <p>Electricity from wind</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(1)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[1]}
+                onChange={() => handleChangeCheckbox(1)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -50,7 +60,11 @@ function EnergySolutions() {
               <p>Electricity from wind</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(2)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[2]}
+                onChange={() => handleChangeCheckbox(2)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -61,7 +75,11 @@ function EnergySolutions() {
               <p>Electricity and heat from Earth</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(3)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[3]}
+                onChange={() => handleChangeCheckbox(3)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -75,7 +93,11 @@ function EnergySolutions() {
               <p>Electricity and heat from gas turbines</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(4)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[4]}
+                onChange={() => handleChangeCheckbox(4)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -86,7 +108,11 @@ function EnergySolutions() {
               <p>Electricity and heat from sunlight</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(5)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[5]}
+                onChange={() => handleChangeCheckbox(5)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -98,7 +124,11 @@ function EnergySolutions() {
               <p>Electricity storage</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(6)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[6]}
+                onChange={() => handleChangeCheckbox(6)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>
@@ -109,7 +139,11 @@ function EnergySolutions() {
               <p>Gas storage</p>
             </div>
             <label>
-              <input onChange={() => handleChangeCheckbox(7)} type="checkbox" />
+              <input
+                checked={valuesForSolutions[7]}
+                onChange={() => handleChangeCheckbox(7)}
+                type="checkbox"
+              />
               <span></span>
             </label>
           </div>

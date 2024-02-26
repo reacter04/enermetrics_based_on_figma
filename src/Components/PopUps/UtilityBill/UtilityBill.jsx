@@ -133,6 +133,7 @@ function UtilityBill() {
                       <div className={styles.input_fields_for_padding}>
                         <div className={styles.for_each_input_container}>
                           <input
+                            value={valuesForUtilityBill[index][0]}
                             onChange={(e) => {
                               setValuesForUtilityBill((prev) =>
                                 prev.map((v, i) =>
@@ -146,6 +147,7 @@ function UtilityBill() {
                         </div>
                         <div className={styles.for_each_input_container}>
                           <input
+                            value={valuesForUtilityBill[index][1]}
                             onChange={(e) => {
                               setValuesForUtilityBill((prev) =>
                                 prev.map((v, i) =>
@@ -225,6 +227,7 @@ function UtilityBill() {
                       <div className={styles.input_fields_for_padding}>
                         <div className={styles.for_each_input_container}>
                           <input
+                            value={valuesForUtilityBill[index + 6][0]}
                             onChange={(e) => {
                               setValuesForUtilityBill((prev) =>
                                 prev.map((v, i) =>
@@ -238,6 +241,7 @@ function UtilityBill() {
                         </div>
                         <div className={styles.for_each_input_container}>
                           <input
+                            value={valuesForUtilityBill[index + 6][1]}
                             onChange={(e) => {
                               setValuesForUtilityBill((prev) =>
                                 prev.map((v, i) =>

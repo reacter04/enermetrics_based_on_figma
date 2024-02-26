@@ -1,5 +1,4 @@
 import React from "react";
-import SimulateSection from "../../Components/SimulateSection/SimulateSection";
 import CalculationInfographic from "../../Components/CalculationInfographic/CalculationInfographic";
 import Testimonials from "../../Components/Testimonials/Testimonials";
 import Main from "../../Components/Main/Main";
@@ -11,7 +10,6 @@ function HomePage() {
 
   return (
     <>
-      <SimulateSection />
       <Main />
       <CalculationInfographic />
       <Testimonials />

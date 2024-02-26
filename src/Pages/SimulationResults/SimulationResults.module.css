@@ -1,0 +1,168 @@
+.simulation_results_section {
+  background: #f7f7f7;
+  width: 100%;
+  margin: auto;
+}
+
+.simulation_results_content {
+  width: 90%;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 400px;
+}
+
+.pre_results_option_first,
+.pre_results_option_second {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 35px 20px 50px;
+  border: solid 2px #ededed;
+  border-radius: 12px;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.pre_results_option_first h2, 
+.pre_results_option_second h2{
+  font-weight: 500;
+}
+
+.pre_results_option_first span, 
+.pre_results_option_second span {
+  padding: 15px 0;
+  text-align: center;
+  width: 200px;
+  font-weight: 600;
+  color: var(--primary-green-color);
+  border: solid 2px var(--primary-green-color);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.pre_results_option_first span:hover
+.pre_results_option_second span:hover {
+  background-color: var(--primary-green-color);
+  color: white;
+}
+
+.pre_results_option_first span:active,
+.pre_results_option_second span:active {
+  background-color: rgb(1, 103, 70);
+}
+
+.filter_bar {
+  background-color: white;
+  border: solid 3px #ededed;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.filter_container_for_padding {
+  display: flex;
+  gap: 2px;
+  background: #cdcdcd;
+  margin: 20px 0;
+}
+
+.filter_criteria {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #a0a0a0;
+}
+
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+/*popupul 2*/
+.utility_bill_popup {
+  opacity: 0.8;
+  height: 0px;
+  visibility: hidden;
+  transform: translateY(-60px);
+}
+
+.utility_bill_popup.openedPopup {
+  height: 700px;
+  margin-top: -115px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: visibility 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  cursor: auto;
+  margin-bottom: 60px;
+}
+
+/*popupul 3*/
+
+.energy_options_popup {
+  opacity: 0.8;
+  height: 0px;
+  visibility: hidden;
+  transform: translateY(-60px);
+}
+.energy_options_popup.openedPopup {
+  height: 610px;
+  margin-top: -115px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: visibility 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  cursor: auto;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1280px) {
+  .utility_bill_popup.openedPopup {
+    height: 650px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 460px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .utility_bill_popup.openedPopup {
+    height: 550px;
+    margin-top: -46px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 440px;
+    margin-top: -46px;
+  }
+}
+
+@media (max-width: 800px) {
+  .utility_bill_popup.openedPopup {
+    height: 1030px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 305px;
+  }
+}
+
+@media (max-width: 500px) {
+  .utility_bill_popup.openedPopup {
+    height: 1030px;
+    margin-top: -77px;
+  }
+  .energy_options_popup.openedPopup {
+    height: 480px;
+    margin-top: -77px;
+  }
+}

@@ -5,7 +5,24 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
-
 :root {
-  --primary-green-color: #0EA47A; 
+  --primary-green-color: #0ea47a;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:active {
+  text-decoration: none;
+  color: inherit;
 }

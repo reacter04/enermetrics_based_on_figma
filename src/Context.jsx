@@ -54,7 +54,6 @@ const EnermetricsContextProvider = ({ children }) => {
   const [solutionsPlaceholderText, setSolutionsPlaceholderText] =
     useState("Energy solutions?");
 
-
   const handleSolutionsPlaceholderText = () => {
     if (valuesForSolutions.every((value) => value === false)) {
       setSolutionsPlaceholderText("Energy solutions?");
@@ -62,7 +61,6 @@ const EnermetricsContextProvider = ({ children }) => {
     if (valuesForSolutions.some((value) => value !== false)) {
       setSolutionsPlaceholderText("Completed");
     }
-
   };
 
   const handleUtilityPlaceholderText = () => {

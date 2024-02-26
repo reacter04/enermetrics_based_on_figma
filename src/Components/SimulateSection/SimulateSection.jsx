@@ -7,9 +7,9 @@ import sunLogo from "../Assets/sun1.png";
 import simulateLogo from "../Assets/Icon-for-simulate.png";
 import BuildingPopUp from "../../Components/PopUps/Building/BuildingPopUp";
 import { EnermetricsContext } from "../../Context";
+import { useNavigate } from "react-router-dom";
 
 function SimulateSection() {
-  const [showPopup, setShowPopup] = useState(false);
   const {
     showUtilityPopup,
     setShowUtilityPopup,
@@ -25,6 +25,12 @@ function SimulateSection() {
     handleSolutionsPlaceholderText,
     valuesForSolutions,
   } = useContext(EnermetricsContext);
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [isDisabledSimulateButton, setIsDisabledSimulateButton] =
+    useState(false);
+
+  const navigate = useNavigate();
 
   let buildingPopupRef = useRef();
   let utilityInListRef = useRef();
@@ -91,6 +97,14 @@ function SimulateSection() {
           secondary: "white",
         },
       });
+      setTimeout(() => {
+        navigate("/simulation_results");
+        setIsDisabledSimulateButton(false);
+      }, 2000);
+      setIsDisabledSimulateButton(true);
+      setShowEnergySolutionsPopup(false);
+      setShowUtilityPopup(false);
+      setShowPopup(false);
     } else
       toast.error("Please fill out all fields.", {
         duration: 1500,
@@ -161,6 +175,10 @@ function SimulateSection() {
           </span>
         </li>
         <li
+          style={{
+            pointerEvents: isDisabledSimulateButton ? "none" : "auto",
+            opacity: isDisabledSimulateButton ? 0.5 : 1,
+          }}
           onClick={notify}
           ref={simulateButtonRef}
           className={styles.simulate_button}
